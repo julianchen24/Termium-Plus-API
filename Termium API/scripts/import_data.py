@@ -1,35 +1,33 @@
 import pandas as pd
 from sqlalchemy import create_engine
 import logging
+from pathlib import Path
 
 def import_csv(csv_path: str):
     logging.basicConfig(level=logging.INFO)
     logger = logging.getLogger(__name__)
     
     try:
-        # Create engine
-        DATABASE_URL = "sqlite:///./data/terms.db"
-        engine = create_engine(DATABASE_URL)
-        
-        # Read CSV file
-        logger.info(f"Reading CSV file: {csv_path}")
+        # Read CSV and convert columns to lowercase
         df = pd.read_csv(csv_path)
-        logger.info(f"Found {len(df)} rows in CSV")
+        df.columns = df.columns.str.lower()
         
-        # Preview data structure
-        logger.info("CSV columns:")
-        logger.info(df.columns.tolist())
+        # Add id column
+        df['id'] = range(1, len(df) + 1)
+        
+        # Create database directory if it doesn't exist
+        Path('./data').mkdir(exist_ok=True)
         
         # Import to database
-        logger.info("Importing data to database...")
+        DATABASE_URL = "sqlite:///./data/terms.db"
+        engine = create_engine(DATABASE_URL)
         df.to_sql('term', engine, if_exists='replace', index=False)
-        
-        logger.info("Import completed successfully")
+        logger.info("Data imported successfully")
         
     except Exception as e:
-        logger.error(f"Error during import: {str(e)}")
+        logger.error(f"Error: {str(e)}")
         raise
-    
+
 if __name__ == "__main__":
     csv_file = "./data/Arts,_loisirs_et_sports_Arts,_Recreation_and_Sports_LJ.csv"
     import_csv(csv_file)

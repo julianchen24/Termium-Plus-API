@@ -1,64 +1,54 @@
 from pydantic import BaseModel
-from typing import List, Optional
-from sqlmodel import Field, SQLModel
+from typing import List
+from app.models import Term
 
 class TermResponse(BaseModel):
-
-    id: Optional[int] = Field(default=None, primary_key=True)
-
-    # English Fields
-    subject_en: Optional[str] = None
-    term_en: Optional[str] = None
-    term_en_parameter: Optional[str] = None
-    abbreviation_en: Optional[str] = None
-    abbreviation_en_parameter: Optional[str] = None
-    synonyms_en: Optional[str] = None
-    synonyms_en_parameters: Optional[str] = None
-    textual_support_1_en: Optional[str] = None
-    textual_support_2_en: Optional[str] = None
-    textual_support_3_en: Optional[str] = None
-
-    # French fields
-    domaine_fr: Optional[str] = None
-    terme_fr: Optional[str] = None
-    terme_fr_parametre: Optional[str] = None
-    abbreviation_fr: Optional[str] = None
-    abbreviation_fr_parametre: Optional[str] = None
-    synonymes_fr: Optional[str] = None
-    synonymes_fr_parametre: Optional[str] = None
-    justification_1_fr: Optional[str] = None
-    justification_2_fr: Optional[str] = None
-    justification_3_fr: Optional[str] = None
-
-    # Universal Entries
-    universal_entries: Optional[str] = None
-
-    # Spanish fields
-    dom_subj_es: Optional[str] = None
-    terme_term_es: Optional[str] = None
-    terme_term_param_es: Optional[str] = None
-    abbr_es: Optional[str] = None
-    abbr_param_es: Optional[str] = None
-    syno_es: Optional[str] = None
-    syno_param_es: Optional[str] = None
-    just_textsupp_1_es: Optional[str] = None
-    just_textsupp_2_es: Optional[str] = None
-    just_textsupp_3_es: Optional[str] = None
-
-    # Portuguese fields
-    dom_subj_pt: Optional[str] = None
-    terme_term_pt: Optional[str] = None
-    terme_term_param_pt: Optional[str] = None
-    abbr_pt: Optional[str] = None
-    abbr_param_pt: Optional[str] = None
-    syno_pt: Optional[str] = None
-    syno_param_pt: Optional[str] = None
-    just_textsupp_1_pt: Optional[str] = None
-    just_textsupp_2_pt: Optional[str] = None
-    just_textsupp_3_pt: Optional[str] = None
-    
     class Config:
-        orm_mode = True
+        from_attributes = True
+        populate_by_name = True
+
+    id: int
+    subject_en: str | None = None
+    term_en: str | None = None
+    term_en_parameter: str | None = None
+    abbreviation_en: str | None = None
+    abbreviation_en_parameter: str | None = None
+    synonyms_en: str | None = None
+    synonyms_en_parameters: str | None = None
+    textual_support_1_en: str | None = None
+    textual_support_2_en: str | None = None
+    textual_support_3_en: str | None = None
+    domaine_fr: str | None = None
+    terme_fr: str | None = None
+    terme_fr_parametre: str | None = None
+    abbreviation_fr: str | None = None
+    abbreviation_fr_parametre: str | None = None
+    synonymes_fr: str | None = None
+    synonymes_fr_parametre: str | None = None
+    justification_1_fr: str | None = None
+    justification_2_fr: str | None = None
+    justification_3_fr: str | None = None
+    universal_entries: str | None = None
+    dom_subj_es: str | None = None
+    terme_term_es: str | None = None
+    terme_term_param_es: str | None = None
+    abbr_es: str | None = None
+    abbr_param_es: str | None = None
+    syno_es: str | None = None
+    syno_param_es: str | None = None
+    just_textsupp_1_es: str | None = None
+    just_textsupp_2_es: str | None = None
+    just_textsupp_3_es: str | None = None
+    dom_subj_pt: str | None = None
+    terme_term_pt: str | None = None
+    terme_term_param_pt: str | None = None
+    abbr_pt: str | None = None
+    abbr_param_pt: str | None = None
+    syno_pt: str | None = None
+    syno_param_pt: str | None = None
+    just_textsupp_1_pt: str | None = None
+    just_textsupp_2_pt: str | None = None
+    just_textsupp_3_pt: str | None = None
 
 class TermsResponse(BaseModel):
     count: int

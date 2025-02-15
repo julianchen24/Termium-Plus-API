@@ -1,15 +1,13 @@
 # venv\Scripts\Activate.ps1
+# Run these if database has not been initialized yet
+# python scripts/db_setup.py
+# python scripts/import_data.py
 
+# uvicorn app.main:app --reload
 
 from fastapi import FastAPI
 from app.api.endpoints import router
 import logging
-
-# Setup logging
-logging.basicConfig(
-    level=logging.INFO,
-    format='%(asctime)s - %(name)s - %(levelname)s - %(message)s'
-)
 
 app = FastAPI(
     title="Terminium Plus API",
