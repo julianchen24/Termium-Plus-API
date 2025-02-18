@@ -29,5 +29,5 @@ def import_csv(csv_path: str):
         raise
 
 if __name__ == "__main__":
-    csv_file = "./data/Arts,_loisirs_et_sports_Arts,_Recreation_and_Sports_LJ.csv"
+    csv_file = "./data/combined.csv"
     import_csv(csv_file)
