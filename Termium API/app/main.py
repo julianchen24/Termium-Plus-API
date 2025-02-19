@@ -8,7 +8,6 @@
 # uvicorn app.main:app --reload
 
 from fastapi import FastAPI
-from app.api.endpoints import router
 import logging
 
 app = FastAPI(
@@ -17,8 +16,9 @@ app = FastAPI(
     version="1.0.0"
 )
 
-app.include_router(router)
-
 @app.on_event("startup")
 async def startup_event():
     logging.info("Starting up FastAPI application")
+
+from app.api.endpoints import router
+app.include_router(router)
