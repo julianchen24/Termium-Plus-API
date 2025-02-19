@@ -3,6 +3,8 @@
 # python scripts/db_setup.py
 # python scripts/import_data.py
 
+# To run tests, cd into Termium API/tests and run pytest
+
 # uvicorn app.main:app --reload
 
 from fastapi import FastAPI
