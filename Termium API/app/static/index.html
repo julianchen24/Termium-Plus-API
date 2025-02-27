@@ -24,6 +24,11 @@
                 It supports term lookups in English, French, Spanish, and Portuguese, allowing users 
                 to search for terminology across different domains and subjects.
             </p>
+            <p>
+                <strong>Fuzzy Search Feature:</strong> The API implements fuzzy matching technology that allows for flexibility in search terms. 
+                This means that even if your search term has slight spelling variations or errors, the API can still find relevant matches. 
+                The similarity matching is controlled by the term_threshold and subject_threshold parameters.
+            </p>
         </div>
 
         <div class="section">
@@ -52,13 +57,13 @@
                     <td>lang</td>
                     <td>string</td>
                     <td>Yes</td>
-                    <td>Language code of the term being searched (en, fr, es, pt)</td>
+                    <td>Language code for the term being searched (en, fr, es, pt)</td>
                 </tr>
                 <tr>
                     <td>subject</td>
                     <td>string</td>
                     <td>No</td>
-                    <td>Filter by subject field</td>
+                    <td>Domain or subject area that provides context for the terminology (e.g., "Sports", "Medicine", "Law")</td>
                 </tr>
                 <tr>
                     <td>term_threshold</td>
@@ -87,6 +92,9 @@
                 
                 <p>Adjust similarity thresholds:</p>
                 <pre>GET /term?term=Boxing&lang=en&term_threshold=75&subject_threshold=60</pre>
+                
+                <p>Fuzzy search example (will still find "Boxing" with a typo):</p>
+                <pre>GET /term?term=Boxng&lang=en</pre>
             </div>
         </div>
 
