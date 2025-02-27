@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terminium Plus API</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="header">
+        <h1>Terminium Plus API</h1>
+        <p>API for querying the Terminium Plus terminology database</p>
+        <div>
+            <a href="/docs" class="btn">Interactive API Docs</a>
+            <a href="/redoc" class="btn">ReDoc API Docs</a>
+        </div>
+    </div>
+
+    <div class="main">
+        <div class="section">
+            <h2>Overview</h2>
+            <p>
+                Terminium Plus API provides access to a multilingual terminology database. 
+                It supports term lookups in English, French, Spanish, and Portuguese, allowing users 
+                to search for terminology across different domains and subjects.
+            </p>
+        </div>
+
+        <div class="section">
+            <h2>API Endpoints</h2>
+            
+            <h3>Root Endpoint</h3>
+            <p><code>GET /</code> - Returns a welcome message</p>
+
+            <h3>Term Search</h3>
+            <p><code>GET /term</code> - Search for terms in the database</p>
+            <p>Parameters:</p>
+            <table>
+                <tr>
+                    <th>Parameter</th>
+                    <th>Type</th>
+                    <th>Required</th>
+                    <th>Description</th>
+                </tr>
+                <tr>
+                    <td>term</td>
+                    <td>string</td>
+                    <td>Yes</td>
+                    <td>The term to search for</td>
+                </tr>
+                <tr>
+                    <td>lang</td>
+                    <td>string</td>
+                    <td>Yes</td>
+                    <td>Language code of the term being searched (en, fr, es, pt)</td>
+                </tr>
+                <tr>
+                    <td>subject</td>
+                    <td>string</td>
+                    <td>No</td>
+                    <td>Filter by subject field</td>
+                </tr>
+                <tr>
+                    <td>term_threshold</td>
+                    <td>integer</td>
+                    <td>No</td>
+                    <td>Similarity threshold for term matching (0-100, default: 80)</td>
+                </tr>
+                <tr>
+                    <td>subject_threshold</td>
+                    <td>integer</td>
+                    <td>No</td>
+                    <td>Similarity threshold for subject matching (0-100, default: 70)</td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="section">
+            <h2>Example Usage</h2>
+            
+            <div class="example">
+                <p>Search for the term "Boxing" in English:</p>
+                <pre>GET /term?term=Boxing&lang=en</pre>
+                
+                <p>Search with subject filter:</p>
+                <pre>GET /term?term=Boxing&lang=en&subject=Sports</pre>
+                
+                <p>Adjust similarity thresholds:</p>
+                <pre>GET /term?term=Boxing&lang=en&term_threshold=75&subject_threshold=60</pre>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Response Format</h2>
+            <p>The API returns results in JSON format:</p>
+            <pre>{
+  "count": 1,
+  "results": [
+    {
+      "id": 1,
+      "subject_en": "Sports",
+      "term_en": "Boxing",
+      "term_en_parameter": null,
+      "abbreviation_en": null,
+      // Other fields...
+      "terme_fr": "Boxe",
+      // Additional language translations...
+    }
+  ]
+}</pre>
+        </div>
+
+        <div class="section">
+            <h2>Installation</h2>
+            <p>To run the API locally:</p>
+            <pre>
+# Clone the repository
+git clone https://github.com/yourusername/terminium-api.git
+cd terminium-api
+
+# Create and activate virtual environment
+python -m venv venv
+venv\Scripts\Activate.ps1  # Windows
+source venv/bin/activate   # Linux/Mac
+
+# Install dependencies
+pip install -r requirements.txt
+
+# Initialize the database
+python scripts/db_setup.py
+python scripts/import_data.py
+
+# Run the API
+uvicorn app.main:app --reload
+</pre>
+        </div>
+    </div>
+
+    <footer>
+        <p>Terminium Plus API - Version 1.0.0</p>
+    </footer>
+</body>
+</html>
