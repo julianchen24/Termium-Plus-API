@@ -7,6 +7,12 @@
 
 # uvicorn app.main:app --reload
 
+# To build:
+# docker build -t terminium-api .
+# docker run -p 8000:8000 terminium-api
+# http://localhost:8000
+
+
 from fastapi import FastAPI
 import logging
 
@@ -22,3 +28,5 @@ async def startup_event():
 
 from app.api.endpoints import router
 app.include_router(router)
+
+

@@ -1,0 +1,12 @@
+__pycache__/
+.venv/
+tests/
+**/test_*.py
+**/test.db
+**/*.db
+.git/
+.gitignore
+.vscode/
+*.log
+CACHEDDIR.TAG
+README.md
