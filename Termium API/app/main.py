@@ -31,6 +31,8 @@ app = FastAPI(
 
 app.mount("/static", StaticFiles(directory="app/static"), name="static")
 
+app.mount("/data", StaticFiles(directory="app/static/data"), name="data")
+
 @app.on_event("startup")
 async def startup_event():
     logging.info("Starting up FastAPI application")
@@ -39,6 +41,7 @@ async def startup_event():
 async def home():
     """Redirect to the static HTML page"""
     return RedirectResponse(url="/static/index.html")
+
 
 
 from app.api.endpoints import router
