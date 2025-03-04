@@ -10,7 +10,7 @@
 # To build:
 # docker build -t terminium-api .
 # docker run -p 8000:8000 terminium-api
-# http://localhost:8000
+# http://localhosSt:8000
 
 
 from fastapi import FastAPI, Request
