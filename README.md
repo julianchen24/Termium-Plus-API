@@ -22,7 +22,15 @@ Unlike general dictionaries or translation tools, this database contains a vast 
 
 These terms are essential for **accurate communication** in **international trade, legal documentation, policy development, and technical translations**.
 
+## Download CSV Dataset
 
+To run this API with the necessary terminology data, download the compiled dataset from the latest GitHub release:
+
+📥 **[Download CSV Dataset](https://github.com/julianchen24/Termium-Plus-API/releases/download/v1.0/combined.csv)**  
+
+🔗 **[GitHub Release Page](https://github.com/julianchen24/Termium-Plus-API/releases/tag/v1.0)**
+
+After downloading, place the `combined.csv` file into the `data/` directory before initializing the database.
 
 ## Features
 
