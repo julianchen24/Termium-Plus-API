@@ -1,12 +1,28 @@
 # Terminium Plus API
-
-A FastAPI-based REST API for querying multilingual terminology data based on TERMIUM Plus®, the Government of Canada's terminology and linguistic data bank.
+A FastAPI-based REST API for querying multilingual terminology data based on [TERMIUM Plus®](https://open.canada.ca/data/en/dataset/94fc74d6-9b9a-4c2e-9c6c-45a5092453aa), the Government of Canada's terminology and linguistic data bank.
 
 ## Overview
 
-This project provides an API service that allows users to search and retrieve terminology across four languages (English, French, Spanish, and Portuguese) with support for fuzzy matching and subject/domain filtering. It's designed to facilitate terminology lookups for translators, content creators, researchers, and anyone working with multilingual content.
+This project provides an API service that allows users to search and retrieve specialized terminology across four languages—English, French, Spanish, and Portuguese—with support for fuzzy matching and subject/domain filtering.
 
-The database is derived from TERMIUM Plus®, a comprehensive terminology and linguistic data bank created by the Translation Bureau of the Government of Canada, one of the world's largest terminology databases with millions of terms in various fields.
+It is particularly valuable for professionals dealing with complex legal, governmental, and industry-specific terminology, including:
+
+- **Translators** ensuring precise term usage  
+- **Policymakers and legal experts** handling legislative texts and official documents  
+- **Regulatory bodies** working with trade agreements, compliance, and legal frameworks  
+- **Researchers and domain specialists** requiring authoritative terminology references  
+
+Unlike general dictionaries or translation tools, this database contains a vast collection of terms that exist nowhere else. Derived from **TERMIUM Plus®**, the Government of Canada’s official terminology and linguistic data bank, it includes millions of terms covering:
+
+- **Government agency names**  
+- **Corporate and organizational names**  
+- **Legal concepts and industry regulations**  
+- **Crop types, import/export rules, and trade-specific terminology**  
+- **Specialized jargon across multiple domains**  
+
+These terms are essential for **accurate communication** in **international trade, legal documentation, policy development, and technical translations**.
+
+
 
 ## Features
 
