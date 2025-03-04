@@ -1,6 +1,15 @@
 # Terminium Plus API
 A FastAPI-based REST API for querying multilingual terminology data based on [TERMIUM Plus®](https://open.canada.ca/data/en/dataset/94fc74d6-9b9a-4c2e-9c6c-45a5092453aa), the Government of Canada's terminology and linguistic data bank.
 
+
+![image](https://github.com/user-attachments/assets/d3cecf1f-53ae-4f8a-a2eb-686ffb67ad19)
+
+![image](https://github.com/user-attachments/assets/b7a05085-26fa-411f-a076-2439971e3045)
+
+![image](https://github.com/user-attachments/assets/53426603-e5bc-448f-9c41-576fe7995136)
+
+
+
 ## Overview
 
 This project provides an API service that allows users to search and retrieve specialized terminology across four languages—English, French, Spanish, and Portuguese—with support for fuzzy matching and subject/domain filtering.
