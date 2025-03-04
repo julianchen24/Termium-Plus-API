@@ -50,6 +50,7 @@ pre {
     border-radius: 5px;
     font-weight: bold;
     margin-right: 10px;
+    margin-bottom: 10px;
 }
 
 .btn:hover {
@@ -58,11 +59,18 @@ pre {
 
 .download-btn {
     background-color: #27ae60;
-    margin-bottom: 10px;
 }
 
 .download-btn:hover {
     background-color: #219653;
+}
+
+.github-btn {
+    background-color: #333;
+}
+
+.github-btn:hover {
+    background-color: #000;
 }
 
 .download-section {

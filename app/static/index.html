@@ -35,7 +35,8 @@
             <h2>Terminology Database</h2>
             <p>The full terminology database is available for download:</p>
             <div class="download-section">
-                <a href="/data/combined.csv" class="btn download-btn">Download combined.csv</a>
+                <a href="https://github.com/julianchen24/Termium-Plus-API/releases/download/v1.0/combined.csv" class="btn download-btn">Download CSV Dataset</a>
+                <a href="https://github.com/julianchen24/Termium-Plus-API/releases/tag/v1.0" class="btn github-btn">GitHub Release Page</a>
                 <p class="note">Note: The CSV file is required to utilize the service and is not included in the GitHub repository due to its size. After downloading, place it in the 'data' folder of your project.</p>
             </div>
             
@@ -153,8 +154,8 @@
 git clone https://github.com/julianchen24/Termium-Plus-API.git
 cd Termium-Plus-API
 
-# Download the CSV file from the deployed version of this API
-# Create a 'data' directory if it doesn't exist (should already exist in repo)
+# Download the CSV file from the GitHub release
+# The direct download link is: https://github.com/julianchen24/Termium-Plus-API/releases/download/v1.0/combined.csv
 # Place the downloaded combined.csv file in the 'data' directory
 # For Windows: copy combined.csv data/
 # For Mac/Linux: cp combined.csv data/
@@ -182,9 +183,9 @@ source venv/bin/activate   # Linux/Mac
 # Install dependencies
 pip install -r requirements.txt
 
-# Download the CSV file from the deployed version of this API
+# Download the CSV file from the GitHub release
+# The direct download link is: https://github.com/julianchen24/Termium-Plus-API/releases/download/v1.0/combined.csv
 # Place the downloaded combined.csv file in the 'data' directory
-# The 'data' directory should already exist in the repository
 # For Windows: copy combined.csv data/
 # For Mac/Linux: cp combined.csv data/
 
@@ -198,10 +199,11 @@ uvicorn app.main:app --reload
                 <p>Once running, access the API at <code>http://localhost:8000</code></p>
             </div>
         </div>
-        <div class="footer">
-            <p>Terminium Plus API is provided for terminology lookup across multiple languages.</p>
-            <p>Version 1.0.0 | Built with FastAPI</p>
-        </div>
+    </div>
+
+    <footer>
+        <p>Terminium Plus API - Version 1.0.0</p>
+    </footer>
     <script src="tab-script.js"></script>
 </body>
 </html>
