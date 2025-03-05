@@ -31,7 +31,7 @@ app = FastAPI(
 
 app.mount("/static", StaticFiles(directory="app/static"), name="static")
 
-app.mount("/data", StaticFiles(directory="app/static/data"), name="data")
+# app.mount("/data", StaticFiles(directory="app/static/data"), name="data")
 
 @app.on_event("startup")
 async def startup_event():
