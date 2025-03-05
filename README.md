@@ -1,4 +1,4 @@
-# Terminium Plus API
+# Termium Plus API
 A FastAPI-based REST API for querying multilingual terminology data based on [TERMIUM Plus®](https://open.canada.ca/data/en/dataset/94fc74d6-9b9a-4c2e-9c6c-45a5092453aa), the Government of Canada's terminology and linguistic data bank.
 
 
