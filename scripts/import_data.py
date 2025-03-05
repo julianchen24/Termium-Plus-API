@@ -9,7 +9,7 @@ def import_csv(csv_path: str):
     
     try:
         # Read CSV and convert columns to lowercase
-        df = pd.read_csv(csv_path)
+        df = pd.read_csv(csv_path, low_memory=False)
         df.columns = df.columns.str.lower()
         
         # Add id column
