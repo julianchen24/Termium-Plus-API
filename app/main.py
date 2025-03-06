@@ -5,7 +5,8 @@
 
 # To run tests, cd into Termium API/tests and run pytest
 
-# uvicorn app.main:app --reload
+# uvicorn app.main:app --host 0.0.0.0 --port 8000 --reload
+
 
 # To build:
 # docker build -t terminium-api .
